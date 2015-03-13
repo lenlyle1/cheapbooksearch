@@ -1,0 +1,41 @@
+
+/* HEADER */
+
+header{
+    background-color: #114533;
+    color: #fff; position: fixed;  
+    width: 100%;  
+    left: 0;  
+    top: 0;  
+    z-index: 100; 
+    height: 50px; 
+    font-size: 1.8em;
+}
+
+header .cheap{    
+    font-family: arial;
+    font-weight: bold;
+    font-family: 'Sonsie One', cursive;
+    color: #ff0;
+}
+header .text{
+    font-family: 'Oswald', sans-serif;
+}
+header a{
+    color: #fff;
+    text-decoration: none;
+}
+header a:visited{
+    color: #fff;
+}
+.logo{
+    padding:10px;
+}
+
+
+nav li {
+    float: right;
+}
+.error {
+    color: #f00;
+}

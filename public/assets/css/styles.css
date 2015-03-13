@@ -1,0 +1,136 @@
+
+.error {
+    color: #f00;
+}
+.hidden{
+    display: none;
+}
+
+.fa{
+    font-size: 1.5em
+}
+.headerBar{
+    color: #114533;
+    background-color: #ff9;
+    padding: 5px;
+    border: 1px solid #114533;
+    border-radius: 5px;
+}
+/*
+.nyt{
+    max-height: 6em;
+    overflow:hidden;
+}
+*/
+.nyt img{
+    width: 100%;
+    // height: 100%;
+    border: 1px solid #114533;
+}
+.btn-nyt{
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.loadingBar{
+    text-align: center;
+    font-size: 2em;
+    color: #114533;
+    border: 1px solid #114533;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.odd{
+    background-color: #ddd;
+}
+.bookResult{
+    padding: 10px;
+    border-radius: 20px;
+    margin: 0 2px 0 2px;
+}
+.bookResult .actions{    
+    text-align: center;
+}
+.author .span{
+    font-weight: bold;
+}
+.bookResult .actions .findPrices{
+    
+}
+
+btn:hover{
+    color: red;
+}
+.btn{
+    color: #fff;   
+    background-color: #114533;
+    width: 100%;
+    padding: 7px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin: 5px 0px 5px 0px;
+    border-radius: 5px;
+}
+}
+
+.search-form{
+    text-align: center;
+}
+.search-form input{
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.search-form .button{    
+    background-color: #114533;
+    font-weight: bold;
+    color: #fff;
+}
+div.prices{
+    margin-top: 3px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    display: none;
+}
+div.priceRow{
+    padding: 10px;
+    margin: 3px;
+    font-size: 1em;
+    cursor: pointer;
+    border-bottom: 1px dotted #ccc;
+    color: #114533;
+}
+.last{
+    border-bottom: 0px !important; 
+}
+div.fullDetails span{
+    font-weight: bold;
+}
+/*
+div.fullDetails .image{
+    float: left;
+    width: 125px;
+    display: inline;
+}
+div.fullDetails .details{
+    float: left;
+    width: 475px;
+    margin-left: 20px;
+}
+*/
+div.fullDetails .links{
+    text-align: center;
+}
+
+#nextButtons button{
+    background-color: #fff;
+    border: 2px solid #ccc;
+}
+#nextButtons button.on{
+    border: 2px solid #114533;
+}

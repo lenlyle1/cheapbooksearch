@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^assets - [L,NC]
+#RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
+
+RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)/?$ index.php?country=$1&module=$2 [QSA]
+RewriteRule ^([a-zA-Z]+)/?$ index.php?country=$1 [QSA]
+

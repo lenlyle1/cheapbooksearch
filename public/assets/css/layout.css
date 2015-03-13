@@ -1,0 +1,23 @@
+body{
+    background: #ebe8de;
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    padding-top: 70px;
+    -webkit-font-smoothing: antialiased;
+}
+ .logo {
+    display: block;
+    width: 400;
+    float: left;
+}
+
+section.body{
+    width: 900px;
+    margin:0 auto;
+}
+.priceRow div{
+    //display: inline;
+}
+.actions{
+    top: 0px;
+}

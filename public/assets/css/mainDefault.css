@@ -1,0 +1,238 @@
+
+
+a {
+}
+div {
+    border: opx solid red;
+}
+
+a:hover {
+}
+.error {
+    color: #f00;
+}
+#mainContent {
+}
+/* HEADER */
+
+
+header .cheap{    
+    font-family: arial;
+    font-weight: bold;
+    font-family: 'Sonsie One', cursive;
+    color: #ff0;
+}
+header .text{
+    font-family: 'Oswald', sans-serif;
+}
+header a{
+    color: #fff;
+    text-decoration: none;
+}
+header a:visited{
+    color: #fff;
+}
+.logo{
+    padding:10px;
+}
+#menuDiv{
+    
+}
+#menuDiv ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#menuDiv li{
+    width: 100px;
+    text-align: center;
+    float: left;
+}
+#menuDiv a{
+    padding: 5px;
+    display: block;
+    background-color: #46A282;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+
+#footerDiv{
+    height: 100px;
+    border: 1px solid #aaa;
+    background-color: #eee;
+}
+
+/* SEARCH FORM */
+.search-form {
+    padding: 20px;    
+}
+ input {
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    font-size: 20px;
+    padding: 5px;
+    display: block;
+}
+.button{
+    width: 100%;
+    padding: 7px;
+    text-align: center;
+    background-color: #114533;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.button a{
+    color: #fff;
+}
+.clear{
+    clear: both;
+}
+
+/* ============== RESULTS ============== */
+#results{
+    padding-top: 10px;
+    
+}
+div.bookResult div{
+    //border: 1px solid #fbb;
+}
+div.buyLink{
+    text-decoration: none;
+    color: #114533;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline;
+    cursor: pointer
+}
+div.bookResult a:visited{
+    color: #114533;
+}
+div.bookResult a:hover{
+    color: #114533;
+}
+div.odd{
+    background-color: #D5F6EA;
+}
+div.bookResult{
+    border-bottom: 1px solid #aaa;
+    padding: 10px;
+}
+div.img{
+    padding: 0 5px 0 5px;
+    width: 75px;
+    float: left;
+}
+div.details{
+    width: 600px;
+    //background-color: #ffa;
+    float: left;
+    font-size: 14px;
+}
+div.details div span{
+    font-weight: bold;
+}
+div.last{
+    border-bottom: 0px solid #aaa;
+}
+div.actions{
+    float: right;
+}
+.button{
+    width: 150px;
+    padding: 7px;
+    text-align: center;
+    background-color: #114533;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+.button a{
+    color: #fff;
+    display: block;
+    text-decoration: none;
+}
+div.fullDetails span{
+    font-weight: bold;
+}
+div.fullDetails .image{
+    float: left;
+    width: 125px;
+    display: inline;
+}
+div.fullDetails .details{
+    float: left;
+    width: 475px;
+    margin-left: 20px;
+}
+div.fullDetails .links{
+    float: left;
+    width: 150px;
+    text-align: center;
+}
+div.prices{
+    display: block;
+}
+div.priceRow{
+    background-color: #fff;
+    border: 1px solid #114533;
+    padding: 10px;
+    margin: 3px;
+    font-size: 18px;
+    cursor: pointer;
+}
+#nextButtons button.on{
+    border: 1px solid red;
+}
+/* SPINNER */
+#fancybox-loading div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 44px;
+    opacity: 1;
+    background-color: #fff;
+}
+
+/* DEBUGGING */
+#debug{
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid #e0e0e0;    
+    border-radius: 10px;
+    background-color: #fff;
+}
+#debug h1{
+    color: #404040;
+}
+#debug div.item{
+    margin: 10px;
+    padding:0px;
+    border: 1px solid #606060;    
+    border-radius: 5px;
+}
+#debug div.title{       
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: 1px solid #606060;   
+    background-color: #e0e0e0;
+    padding: 5px;
+    font-weight:bold; 
+}
+#debug div.value{
+    
+}
+#debug .content {
+    padding: 10px;
+}
+#debug pre{
+    padding: 10px;
+    margin: 0px;
+}
