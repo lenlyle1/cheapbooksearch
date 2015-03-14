@@ -21,11 +21,28 @@
             ga('send', 'pageview'); 
             
             function scrollToID(id, speed){
-                console.log(id)
-                var offSet = 70;
-                var targetOffset = $(id).offset().top - offSet;
-                $('html,body').animate({scrollTop:targetOffset}, speed);
+                if($("#searchTop").length){
+                    var offSet = 50;
+                    var targetOffset = $(id).offset().top - offSet;
+                    $('html,body').animate({scrollTop:targetOffset}, speed);
+                }
             }
+            
+            // responsive
+            (function ($, window, document, undefined){
+                'use strict';$(function (){
+                    $("#mobileMenu").hide();
+                    $(".toggleMobile").click(function(){
+                        $(this).toggleClass("active");
+                        $("#mobileMenu").slideToggle(500);
+                    });
+                });
+                $(window).on("resize", function(){
+                    if($(this).width() > 500){
+                        $("#mobileMenu").hide();
+                        $(".toggleMobile").removeClass("active");
+                    }});
+            })(jQuery, window, document);
             {/literal}
         </script>
         

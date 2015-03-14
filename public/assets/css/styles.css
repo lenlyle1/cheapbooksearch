@@ -5,9 +5,18 @@
 .hidden{
     display: none;
 }
-
+.cleared{
+    clear: both;
+}
+.bold{
+    font-weight: bold;
+}
 .fa{
     font-size: 1.5em
+}
+h2 {
+    font-weight: bold;
+    margin-top:10px;
 }
 .headerBar{
     color: #114533;
@@ -15,16 +24,21 @@
     padding: 5px;
     border: 1px solid #114533;
     border-radius: 5px;
+    margin-top: 10px;
 }
-/*
-.nyt{
-    max-height: 6em;
+.nyt-img-wrapper{
+    
+}
+.nyt-img{
+    width: 16%;
+    float: left;
+    max-height: 10em;
     overflow:hidden;
+    margin: 0px 1px 0px 1px;
 }
-*/
-.nyt img{
+
+.nyt-img img{
     width: 100%;
-    // height: 100%;
     border: 1px solid #114533;
 }
 .btn-nyt{
@@ -52,7 +66,7 @@
 .bookResult .actions{    
     text-align: center;
 }
-.author .span{
+.details span{
     font-weight: bold;
 }
 .bookResult .actions .findPrices{
@@ -73,7 +87,7 @@ btn:hover{
     margin: 5px 0px 5px 0px;
     border-radius: 5px;
 }
-}
+
 
 .search-form{
     text-align: center;
@@ -104,6 +118,9 @@ div.priceRow{
     cursor: pointer;
     border-bottom: 1px dotted #ccc;
     color: #114533;
+}
+div.priceRow span{
+    font-weight: bold;
 }
 .last{
     border-bottom: 0px !important; 

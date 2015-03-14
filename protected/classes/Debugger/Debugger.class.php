@@ -29,7 +29,7 @@ Class Debugger
         self::$logPath = $path;
     }
 
-    public static function getItems() 
+    public static function getItems()
     {
         return self::$debugItems;
     }

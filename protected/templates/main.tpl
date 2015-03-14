@@ -8,6 +8,7 @@
         
         
         <link rel="stylesheet" type="text/css" href="/assets/css/reset.css" />
+        
         <link rel="stylesheet" type="text/css" href="/assets/css/layout.css" />
         <link rel="stylesheet" type="text/css" href="/assets/css/header.css" />
         <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
@@ -23,47 +24,67 @@
     
     <body>
         <header>
-            <div class="logo">
-                <a href="/{$country->code_3}/">
-                    <span class="cheap">Cheap</span>
-                    <span class="text">Book Search</span>
-                </a>  
+            <div class="container">
+                <div class="logo">
+                    <a href="/{$country->code_3}/">
+                        <span class="cheap">Cheap</span>
+                        <span class="text">Book Search</span>
+                    </a>  
+                </div>
+                <div class="toggleMobile">
+                    <span class="menu1"></span>
+                    <span class="menu2"></span>
+                    <span class="menu3"></span>
+                </div>
+                <div id="mobileMenu">
+                    <ul>
+                        {foreach $countries as $ctry}
+                        <li {if $ctry->code_3 == $country->code_3}class="active"{/if}>
+                            <a href="/{$ctry->code_3}/">
+                                <img src="/assets/images/flags/32/{$ctry->code_2}.png" />
+                            </a>
+                        </li>
+                        {/foreach}
+                    </ul>
+                </div>
+                <nav>                   
+                    <ul >
+                        {foreach $countries as $ctry}
+                        <li {if $ctry->code_3 == $country->code_3}class="active"{/if}>
+                            <a href="/{$ctry->code_3}/">
+                                <img src="/assets/images/flags/32/{$ctry->code_2}.png" />
+                            </a>
+                        </li>
+                        {/foreach}
+                    </ul>
+                </nav>
             </div>
-            <nav>                   
-                <ul >
-                    {foreach $countries as $ctry}
-                    <li {if $ctry->code_3 == $country->code_3}class="active"{/if}>
-                        <a href="/{$ctry->code_3}/">
-                            <img src="/assets/images/flags/32/{$ctry->code_2}.png" />
-                        </a>
-                    </li>
-                    {/foreach}
-                </ul>
-            </nav>
         </header>
                 
         <section class="body">
-            {*
+           
             <div class="container" role="main">
-                <div class="btn-toolbar cleared">
-                    <div class="search-form btn-group btn-group-sm cleared nyt" >
-                            {foreach $bestsellers as $book}
-                                {if $book@iteration <= 6}
-                                    <div class="btn btn-nyt col-xs-2 col-md-2">
-                                        <form class="nyt">
-                                            <input type="hidden" name="author" value="{ucwords($book->book_details[0]->author)}" />
-                                            <input type="hidden" name="title" value="{ucwords(strtolower($book->book_details[0]->title))}" />
-                                            <img src="{$book->book_details[0]->book_image}" class="nyt-img"/>
-                                        </form>
-                                    </div>
-                                {/if}
-                            {/foreach}
-                    </div>
+                <div class="nyt-holder">
+                    {foreach $bestsellers as $book}
+                        {if $book@iteration <= 6}
+                            <div class="nyt-item" data-name="nyt">
+                                <div class="nyt-wrapper" >
+                                    <form class="nyt">
+                                        <input type="hidden" name="author" value="{ucwords($book->book_details[0]->author)}" />
+                                        <input type="hidden" name="title" value="{ucwords(strtolower($book->book_details[0]->title))}" />
+                                        <img src="{$book->book_details[0]->book_image}" class="nyt-img"/>
+                                    </form>
+                                </div>
+                            </div>
+                        {/if}
+                    {/foreach}
                 </div>
-                *} 
+                    
+                <div class="cleared"></div>
+                
                 <div id="headerLoader" class="loadingBar hidden"><i class="fa fa-refresh fa-spin"></i> Searching</div>
 
-                <h3>Find the Lowest Prices On Millions of Books Instantly</h3>
+                <h2>Find the Lowest Prices On Millions of Books Instantly</h2>
                 CheapBookSearch.com is a <b>free book search engine</b> where you’ll find the lowest prices on millions of books so you can read more and pay less.
                 {include 'searchForm.tpl'}
 

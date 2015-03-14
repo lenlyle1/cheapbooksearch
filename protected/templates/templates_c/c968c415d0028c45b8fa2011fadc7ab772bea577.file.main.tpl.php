@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-12 12:39:24
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-14 18:05:16
          compiled from "/www/cheapbooksearch/protected/templates/main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:73694573654ced0d6223a80-33011413%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c968c415d0028c45b8fa2011fadc7ab772bea577' => 
     array (
       0 => '/www/cheapbooksearch/protected/templates/main.tpl',
-      1 => 1426163891,
+      1 => 1426356314,
       2 => 'file',
     ),
   ),
@@ -23,6 +23,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'country' => 0,
     'countries' => 0,
     'ctry' => 0,
+    'bestsellers' => 0,
+    'book' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -38,6 +40,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         
         
         <link rel="stylesheet" type="text/css" href="/assets/css/reset.css" />
+        
         <link rel="stylesheet" type="text/css" href="/assets/css/layout.css" />
         <link rel="stylesheet" type="text/css" href="/assets/css/header.css" />
         <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
@@ -53,37 +56,89 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     
     <body>
         <header>
-            <div class="logo">
-                <a href="/<?php echo $_smarty_tpl->tpl_vars['country']->value->code_3;?>
+            <div class="container">
+                <div class="logo">
+                    <a href="/<?php echo $_smarty_tpl->tpl_vars['country']->value->code_3;?>
 /">
-                    <span class="cheap">Cheap</span>
-                    <span class="text">Book Search</span>
-                </a>  
-            </div>
-            <nav>                   
-                <ul >
-                    <?php  $_smarty_tpl->tpl_vars['ctry'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ctry']->_loop = false;
+                        <span class="cheap">Cheap</span>
+                        <span class="text">Book Search</span>
+                    </a>  
+                </div>
+                    <div class="toggleMobile">
+                        <span class="menu1"></span>
+                        <span class="menu2"></span>
+                        <span class="menu3"></span>
+                    </div>
+                    <div id="mobileMenu">
+                        <ul>
+                            <?php  $_smarty_tpl->tpl_vars['ctry'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ctry']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['countries']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['ctry']->key => $_smarty_tpl->tpl_vars['ctry']->value) {
 $_smarty_tpl->tpl_vars['ctry']->_loop = true;
 ?>
-                    <li <?php if ($_smarty_tpl->tpl_vars['ctry']->value->code_3==$_smarty_tpl->tpl_vars['country']->value->code_3) {?>class="active"<?php }?>>
-                        <a href="/<?php echo $_smarty_tpl->tpl_vars['ctry']->value->code_3;?>
+                            <li <?php if ($_smarty_tpl->tpl_vars['ctry']->value->code_3==$_smarty_tpl->tpl_vars['country']->value->code_3) {?>class="active"<?php }?>>
+                                <a href="/<?php echo $_smarty_tpl->tpl_vars['ctry']->value->code_3;?>
 /">
-                            <img src="/assets/images/flags/32/<?php echo $_smarty_tpl->tpl_vars['ctry']->value->code_2;?>
+                                    <img src="/assets/images/flags/32/<?php echo $_smarty_tpl->tpl_vars['ctry']->value->code_2;?>
 .png" />
-                        </a>
-                    </li>
-                    <?php } ?>
-                </ul>
-            </nav>
+                                </a>
+                            </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                <nav>                   
+                    <ul >
+                        <?php  $_smarty_tpl->tpl_vars['ctry'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['ctry']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['countries']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['ctry']->key => $_smarty_tpl->tpl_vars['ctry']->value) {
+$_smarty_tpl->tpl_vars['ctry']->_loop = true;
+?>
+                        <li <?php if ($_smarty_tpl->tpl_vars['ctry']->value->code_3==$_smarty_tpl->tpl_vars['country']->value->code_3) {?>class="active"<?php }?>>
+                            <a href="/<?php echo $_smarty_tpl->tpl_vars['ctry']->value->code_3;?>
+/">
+                                <img src="/assets/images/flags/32/<?php echo $_smarty_tpl->tpl_vars['ctry']->value->code_2;?>
+.png" />
+                            </a>
+                        </li>
+                        <?php } ?>
+                    </ul>
+                </nav>
+            </div>
         </header>
                 
         <section class="body">
-             
+           
+            <div class="container" role="main">
+                <div class="nyt-holder">
+                    <?php  $_smarty_tpl->tpl_vars['book'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['book']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['bestsellers']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['book']->iteration=0;
+foreach ($_from as $_smarty_tpl->tpl_vars['book']->key => $_smarty_tpl->tpl_vars['book']->value) {
+$_smarty_tpl->tpl_vars['book']->_loop = true;
+ $_smarty_tpl->tpl_vars['book']->iteration++;
+?>
+                        <?php if ($_smarty_tpl->tpl_vars['book']->iteration<=6) {?>
+                            <div class="nyt-item" data-name="nyt">
+                                <div class="nyt-wrapper" >
+                                    <form class="nyt">
+                                        <input type="hidden" name="author" value="<?php echo ucwords($_smarty_tpl->tpl_vars['book']->value->book_details[0]->author);?>
+" />
+                                        <input type="hidden" name="title" value="<?php echo ucwords(strtolower($_smarty_tpl->tpl_vars['book']->value->book_details[0]->title));?>
+" />
+                                        <img src="<?php echo $_smarty_tpl->tpl_vars['book']->value->book_details[0]->book_image;?>
+" class="nyt-img"/>
+                                    </form>
+                                </div>
+                            </div>
+                        <?php }?>
+                    <?php } ?>
+                </div>
+                    
+                <div class="cleared"></div>
+                
                 <div id="headerLoader" class="loadingBar hidden"><i class="fa fa-refresh fa-spin"></i> Searching</div>
 
-                <h3>Find the Lowest Prices On Millions of Books Instantly</h3>
+                <h2>Find the Lowest Prices On Millions of Books Instantly</h2>
                 CheapBookSearch.com is a <b>free book search engine</b> where you’ll find the lowest prices on millions of books so you can read more and pay less.
                 <?php echo $_smarty_tpl->getSubTemplate ('searchForm.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 

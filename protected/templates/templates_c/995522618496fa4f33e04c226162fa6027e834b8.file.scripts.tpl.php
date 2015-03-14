@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-11 02:59:31
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-14 18:09:51
          compiled from "/www/cheapbooksearch/protected/templates/scripts.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:83306376654ea713626ce75-10279990%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '995522618496fa4f33e04c226162fa6027e834b8' => 
     array (
       0 => '/www/cheapbooksearch/protected/templates/scripts.tpl',
-      1 => 1426042764,
+      1 => 1426356521,
       2 => 'file',
     ),
   ),
@@ -72,11 +72,28 @@ $_smarty_tpl->tpl_vars['vendor']->_loop = true;
             ga('send', 'pageview'); 
             
             function scrollToID(id, speed){
-                console.log(id)
-                var offSet = 70;
-                var targetOffset = $(id).offset().top - offSet;
-                $('html,body').animate({scrollTop:targetOffset}, speed);
+                if($("#searchTop").length){
+                    var offSet = 50;
+                    var targetOffset = $(id).offset().top - offSet;
+                    $('html,body').animate({scrollTop:targetOffset}, speed);
+                }
             }
+            
+            // responsive
+            (function ($, window, document, undefined){
+                'use strict';$(function (){
+                    $("#mobileMenu").hide();
+                    $(".toggleMobile").click(function(){
+                        $(this).toggleClass("active");
+                        $("#mobileMenu").slideToggle(500);
+                    });
+                });
+                $(window).on("resize", function(){
+                    if($(this).width() > 500){
+                        $("#mobileMenu").hide();
+                        $(".toggleMobile").removeClass("active");
+                    }});
+            })(jQuery, window, document);
             
         <?php echo '</script'; ?>
 >

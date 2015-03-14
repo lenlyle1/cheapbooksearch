@@ -1,18 +1,31 @@
 body{
-    background: #ebe8de;
+   /* background: #ebe8de; */
     font-family: 'Open Sans', sans-serif;
     color: #333333;
-    padding-top: 70px;
+    padding-top: 60px;
     -webkit-font-smoothing: antialiased;
 }
- .logo {
-    display: block;
-    width: 400;
+.container{
+    width: auto;
+    max-width: 900px;    
+    margin:0 auto;
+}
+.left{
     float: left;
 }
-
+.right{
+    float: reight;
+}
+.logo {
+    display: block;
+    float: left;
+}
+.nyt-holder{
+    width:100%;
+}
 section.body{
-    width: 900px;
+    width: auto;
+    max-width: 900px;;
     margin:0 auto;
 }
 .priceRow div{
@@ -20,4 +33,7 @@ section.body{
 }
 .actions{
     top: 0px;
+}
+#headerLoader{
+    margin-top: 10px;
 }

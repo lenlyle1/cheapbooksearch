@@ -3,13 +3,13 @@
 {foreach $results['items'] as $book}
         {assign var="author" value=""}
         <div id="bookResult{$book@iteration}" class="bookResult{if $book@iteration % 2 == 0} odd{/if}{if $book@last} last{/if} row">
-            <div class="col-md-1 col-xs-3">
+            <div class="book-img-small left">
                 <img src="{if isset($book->SmallImage->URL)}{$book->SmallImage->URL}{else}/assets/images/book_small.png{/if}" />
             </div>
 
-            <div class="details col-md-9 col-xs-9">
+            <div class="details right">
                 {if !empty($book->ItemAttributes->Author)}
-                    <div class="author"><b>Author{if isset($book->ItemAttributes->Author) && is_array($book->ItemAttributes->Author)}s{/if}:</b>
+                    <div class="title bold"><span>Author{if isset($book->ItemAttributes->Author) && is_array($book->ItemAttributes->Author)}s{/if}:</span>
                         {if isset($book->ItemAttributes->Author) && is_array($book->ItemAttributes->Author)}
                             {assign var="authorName" value=", "|implode:$book->ItemAttributes->Author}
                             {", "|implode:$book->ItemAttributes->Author}
@@ -19,26 +19,26 @@
                         {/if}
                     </div>
                 {/if}
-                <div class="title"><b>Title:</b> {$book->ItemAttributes->Title}</div>
+                <div class="title bold"><span>Title:</span> {$book->ItemAttributes->Title}</div>
                 {if !empty($book->ItemAttributes->PublicationDate)}
-                    <div class="title"><b>Publication date:</b> {$book->ItemAttributes->PublicationDate}</div>
+                    <div class="title bold"><span>Publication date:</span> {$book->ItemAttributes->PublicationDate}</div>
                 {/if}
             </div>
-            <div class="actions col-md-2 col-xs-12">
-                <div class="button showDetails" data-item="{$book@iteration}">Details</a></div>
+            <div class="actions cleared">
+                <div class="btn showDetails" data-item="{$book@iteration}">Details</a></div>
                 <div class="text">- or -</div>
-                <div class="button findPrices" data-item="{$book@iteration}" data-asin="{$book->ASIN}" data-isbn="{$book->ItemAttributes->ISBN}" data-author="{$authorName}" data-title="{$book->ItemAttributes->Title}"><i class="fa fa-book searchButton"></i> Find prices</div>
+                <div class="btn findPrices" data-item="{$book@iteration}" data-asin="{$book->ASIN}" data-isbn="{$book->ItemAttributes->ISBN}" data-author="{$authorName}" data-title="{$book->ItemAttributes->Title}"><i class="fa fa-book searchButton"></i> Find prices</div>
             </div>
-            <div class="prices col-md-12 col-xs-12"></div>
+            <div class="prices"></div>
 
-            <div style="display:none;" class="col-xs-12">
+            <div style="display:none;" class="">
                 <div class="fullDetails" id="details_{$book@iteration}">
-                    <div class='image col-md-2'>
+                    <div class='image'>
                         <img src="{if isset($book->MediumImage->URL)}{$book->MediumImage->URL}{else}/assets/images/book.png{/if}" />
                     </div>
                     <div class="details col-md-7">
                         {if !empty($book->ItemAttributes->Author)}
-                            <b>Author:</b> 
+                            <span>Author:</span> 
                             {if is_array($book->ItemAttributes->Author)}
                                 {", "|implode:$book->ItemAttributes->Author}
                             {else}
@@ -46,48 +46,48 @@
                             {/if}<br />
                         {/if}
                     {if isset($book->ItemAttributes->Title)}
-                        <b>Title:</b> {$book->ItemAttributes->Title}<br />
+                        <span>Title:</span> {$book->ItemAttributes->Title}<br />
                     {/if}
                     {if isset($book->ItemAttributes->Binding)}
-                        <b>Binding:</b> {$book->ItemAttributes->Binding}<br />
+                        <span>Binding:</span> {$book->ItemAttributes->Binding}<br />
                     {/if}
                     {if isset($book->ItemAttributes->Height)}
-                        <b>Dimensions:</b> 
+                        <span>Dimensions:</span> 
                             {$book->ItemAttributes->ItemDimensions->Height->_} x 
                             {$book->ItemAttributes->ItemDimensions->Length->_} x 
                             {$book->ItemAttributes->ItemDimensions->Width->_}
                             ({$book->ItemAttributes->ItemDimensions->Height->Units})<br />
                     {/if}
                     {if isset($book->ItemAttributes->ItemDimensions->Weight)}
-                        <b>Weight:</b> {$book->ItemAttributes->ItemDimensions->Weight->_}<br />
+                        <span>Weight:</span> {$book->ItemAttributes->ItemDimensions->Weight->_}<br />
                     {/if}
                     {if isset($book->ItemAttributes->Manufacturer)}
-                        <b>Manufacturer:</b> {$book->ItemAttributes->Manufacturer}<br />
+                        <span>Manufacturer:</span> {$book->ItemAttributes->Manufacturer}<br />
                     {/if}
                     {if isset($book->ItemAttributes->Manufacturer)}
-                        <b>EAN:</b> {$book->ItemAttributes->EAN}<br />
+                        <span>EAN:</span> {$book->ItemAttributes->EAN}<br />
                     {/if}
                     {if isset($book->ItemAttributes->ISBN)}
-                        <b>ISBN:</b> {$book->ItemAttributes->ISBN}<br />
+                        <span>ISBN:</span> {$book->ItemAttributes->ISBN}<br />
                     {/if}
                     {if isset($book->ItemAttributes->Edition)}
-                        <b>Edition:</b> {$book->ItemAttributes->Edition}<br />
+                        <span>Edition:</span> {$book->ItemAttributes->Edition}<br />
                     {/if}
                     {if isset($book->ItemAttributes->Language)}
-                        <b>Languages:</b> 
+                        <span>Languages:</span> 
                         {foreach $book->ItemAttributes->Languages->Language as $language}
                                 {$language->Name}-{$language->Type} {if !$language@last}|{/if}
                         {/foreach}
                         <br />
                     {/if}
                     {if isset($book->ItemAttributes->NumberOfPages)}
-                        <b>Num pages::</b> {$book->ItemAttributes->NumberOfPages}<br />
+                        <span>Num pages::</span> {$book->ItemAttributes->NumberOfPages}<br />
                     {/if}
                     {if isset($book->EditorialReviews->EditorialReview->Content)}
-                        <b>Description:</b> {$book->EditorialReviews->EditorialReview->Content}<br />
+                        <span>Description:</span> {$book->EditorialReviews->EditorialReview->Content}<br />
                     {/if}
                     {if isset($book->ItemAttributes->PublicationDate)}
-                        <b>Publication date:</b> {$book->ItemAttributes->PublicationDate}
+                        <span>Publication date:</span> {$book->ItemAttributes->PublicationDate}
                     {/if}
                     </div>
                     <div class="links col-md-3">                

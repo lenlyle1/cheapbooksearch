@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-07 17:02:24
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-14 17:54:30
          compiled from "/www/cheapbooksearch/protected/templates/lookupResults.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:179089089454cee65c50b228-11803487%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '105043d8707c4d8038ee215b670ebb28a5ff6d36' => 
     array (
       0 => '/www/cheapbooksearch/protected/templates/lookupResults.tpl',
-      1 => 1425747635,
+      1 => 1426355652,
       2 => 'file',
     ),
   ),
@@ -45,15 +45,15 @@ $_smarty_tpl->tpl_vars['book']->_loop = true;
         <div id="bookResult<?php echo $_smarty_tpl->tpl_vars['book']->iteration;?>
 " class="bookResult<?php if ($_smarty_tpl->tpl_vars['book']->iteration%2==0) {?> odd<?php }
 if ($_smarty_tpl->tpl_vars['book']->last) {?> last<?php }?> row">
-            <div class="col-md-1 col-xs-3">
+            <div class="book-img-small left">
                 <img src="<?php if (isset($_smarty_tpl->tpl_vars['book']->value->SmallImage->URL)) {
 echo $_smarty_tpl->tpl_vars['book']->value->SmallImage->URL;
 } else { ?>/assets/images/book_small.png<?php }?>" />
             </div>
 
-            <div class="details col-md-9 col-xs-9">
+            <div class="details right">
                 <?php if (!empty($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author)) {?>
-                    <div class="author"><b>Author<?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author)&&is_array($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author)) {?>s<?php }?>:</b>
+                    <div class="title bold"><span>Author<?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author)&&is_array($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author)) {?>s<?php }?>:</span>
                         <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author)&&is_array($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author)) {?>
                             <?php $_smarty_tpl->tpl_vars["authorName"] = new Smarty_variable(implode(", ",$_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author), null, 0);?>
                             <?php echo implode(", ",$_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author);?>
@@ -65,37 +65,37 @@ echo $_smarty_tpl->tpl_vars['book']->value->SmallImage->URL;
                         <?php }?>
                     </div>
                 <?php }?>
-                <div class="title"><b>Title:</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Title;?>
+                <div class="title bold"><span>Title:</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Title;?>
 </div>
                 <?php if (!empty($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->PublicationDate)) {?>
-                    <div class="title"><b>Publication date:</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->PublicationDate;?>
+                    <div class="title bold"><span>Publication date:</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->PublicationDate;?>
 </div>
                 <?php }?>
             </div>
-            <div class="actions col-md-2 col-xs-12">
-                <div class="button showDetails" data-item="<?php echo $_smarty_tpl->tpl_vars['book']->iteration;?>
+            <div class="actions cleared">
+                <div class="btn showDetails" data-item="<?php echo $_smarty_tpl->tpl_vars['book']->iteration;?>
 ">Details</a></div>
                 <div class="text">- or -</div>
-                <div class="button findPrices" data-item="<?php echo $_smarty_tpl->tpl_vars['book']->iteration;?>
+                <div class="btn findPrices" data-item="<?php echo $_smarty_tpl->tpl_vars['book']->iteration;?>
 " data-asin="<?php echo $_smarty_tpl->tpl_vars['book']->value->ASIN;?>
 " data-isbn="<?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->ISBN;?>
 " data-author="<?php echo $_smarty_tpl->tpl_vars['authorName']->value;?>
 " data-title="<?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Title;?>
 "><i class="fa fa-book searchButton"></i> Find prices</div>
             </div>
-            <div class="prices col-md-12 col-xs-12"></div>
+            <div class="prices"></div>
 
-            <div style="display:none;" class="col-xs-12">
+            <div style="display:none;" class="">
                 <div class="fullDetails" id="details_<?php echo $_smarty_tpl->tpl_vars['book']->iteration;?>
 ">
-                    <div class='image col-md-2'>
+                    <div class='image'>
                         <img src="<?php if (isset($_smarty_tpl->tpl_vars['book']->value->MediumImage->URL)) {
 echo $_smarty_tpl->tpl_vars['book']->value->MediumImage->URL;
 } else { ?>/assets/images/book.png<?php }?>" />
                     </div>
                     <div class="details col-md-7">
                         <?php if (!empty($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author)) {?>
-                            <b>Author:</b> 
+                            <span>Author:</span> 
                             <?php if (is_array($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author)) {?>
                                 <?php echo implode(", ",$_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Author);?>
 
@@ -105,15 +105,15 @@ echo $_smarty_tpl->tpl_vars['book']->value->MediumImage->URL;
                             <?php }?><br />
                         <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Title)) {?>
-                        <b>Title:</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Title;?>
+                        <span>Title:</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Title;?>
 <br />
                     <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Binding)) {?>
-                        <b>Binding:</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Binding;?>
+                        <span>Binding:</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Binding;?>
 <br />
                     <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Height)) {?>
-                        <b>Dimensions:</b> 
+                        <span>Dimensions:</span> 
                             <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->ItemDimensions->Height->_;?>
  x 
                             <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->ItemDimensions->Length->_;?>
@@ -124,27 +124,27 @@ echo $_smarty_tpl->tpl_vars['book']->value->MediumImage->URL;
 )<br />
                     <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->ItemDimensions->Weight)) {?>
-                        <b>Weight:</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->ItemDimensions->Weight->_;?>
+                        <span>Weight:</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->ItemDimensions->Weight->_;?>
 <br />
                     <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Manufacturer)) {?>
-                        <b>Manufacturer:</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Manufacturer;?>
+                        <span>Manufacturer:</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Manufacturer;?>
 <br />
                     <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Manufacturer)) {?>
-                        <b>EAN:</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->EAN;?>
+                        <span>EAN:</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->EAN;?>
 <br />
                     <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->ISBN)) {?>
-                        <b>ISBN:</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->ISBN;?>
+                        <span>ISBN:</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->ISBN;?>
 <br />
                     <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Edition)) {?>
-                        <b>Edition:</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Edition;?>
+                        <span>Edition:</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Edition;?>
 <br />
                     <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Language)) {?>
-                        <b>Languages:</b> 
+                        <span>Languages:</span> 
                         <?php  $_smarty_tpl->tpl_vars['language'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['language']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->Languages->Language; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
  $_smarty_tpl->tpl_vars['language']->total= $_smarty_tpl->_count($_from);
@@ -161,15 +161,15 @@ $_smarty_tpl->tpl_vars['language']->_loop = true;
                         <br />
                     <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->NumberOfPages)) {?>
-                        <b>Num pages::</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->NumberOfPages;?>
+                        <span>Num pages::</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->NumberOfPages;?>
 <br />
                     <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->EditorialReviews->EditorialReview->Content)) {?>
-                        <b>Description:</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->EditorialReviews->EditorialReview->Content;?>
+                        <span>Description:</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->EditorialReviews->EditorialReview->Content;?>
 <br />
                     <?php }?>
                     <?php if (isset($_smarty_tpl->tpl_vars['book']->value->ItemAttributes->PublicationDate)) {?>
-                        <b>Publication date:</b> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->PublicationDate;?>
+                        <span>Publication date:</span> <?php echo $_smarty_tpl->tpl_vars['book']->value->ItemAttributes->PublicationDate;?>
 
                     <?php }?>
                     </div>

@@ -1,12 +1,16 @@
 var count, vendorCount;
-var Search = {
+var Search = {    
     run: function(form, page){
-        if(typeof form == "object"){            
-            var className = $(form).attr('class');
+        console.log(form)
+        if(typeof form == "object"){
+            console.log('object');
+            var className = $(form).data('name');
+            form = $(form).find('form');
             var data = $(form).serialize();
-            $("#author").val($(form).find("[name=author]").val())
-            $("#title").val($(form).find("[name=title]").val())
+            $("#author").val($(form).find("[name=author]").val());
+            $("#title").val($(form).find("[name=title]").val());
         } else {
+            console.log('form');
             var data = $("#"+form).serialize();
         }
         console.log(data);
@@ -22,7 +26,7 @@ var Search = {
                     console.log('nyt loader');
                     Search.showLoadingBar('header');
                 } else {
-        console.log('running');
+                    console.log('running');
                     if(form != "loadMore"){
                         $("#searchButton").css('color', '#ff0')
                         $("#searchButton").removeClass('fa-book');
@@ -38,7 +42,7 @@ var Search = {
                 Search.hideLoadingBar('header');
             } else {
                 if(form != "loadMore"){
-                    $("#searchButton").css('color', '#fff')
+                    $("#searchButton").css('color', '#fff');
                     $("#searchButton").removeClass('fa-refresh');
                     $("#searchButton").removeClass('fa-spin');
                     $("#searchButton").addClass('fa-book');
@@ -182,9 +186,8 @@ $( document ).ready(function(){
             return false;
         }
     });
-    $(".nyt-img").on('click', function(){
+    $(".nyt-item").on('click', function(){
         console.log('searching');
-        console.log($(this).parent().attr('class'))
-        Search.run($(this).parent());
+        Search.run($(this));
     })
 });
