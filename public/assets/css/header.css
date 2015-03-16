@@ -9,6 +9,7 @@ header{
     z-index: 100; 
     height: 50px; 
     font-size: 1.8em;
+    border-bottom: 2px solid #ff0;
 }
 
 header .cheap{    
@@ -28,10 +29,11 @@ header a:visited{
     color: #fff;
 }
 .logo{
-    padding:10px;
+    padding: 15px 10px 0 0 ;
 }
 
 
 nav li {
     float: right;
 }
+

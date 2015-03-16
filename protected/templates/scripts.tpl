@@ -22,7 +22,7 @@
             
             function scrollToID(id, speed){
                 if($("#searchTop").length){
-                    var offSet = 50;
+                    var offSet = 60;
                     var targetOffset = $(id).offset().top - offSet;
                     $('html,body').animate({scrollTop:targetOffset}, speed);
                 }

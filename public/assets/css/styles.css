@@ -14,37 +14,16 @@
 .fa{
     font-size: 1.5em
 }
+span.noTrans{
+    background-color: #f00;
+    color: #fff;
+}
 h2 {
     font-weight: bold;
     margin-top:10px;
 }
-.headerBar{
-    color: #114533;
-    background-color: #ff9;
-    padding: 5px;
-    border: 1px solid #114533;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-.nyt-img-wrapper{
-    
-}
-.nyt-img{
-    width: 16%;
-    float: left;
-    max-height: 10em;
-    overflow:hidden;
-    margin: 0px 1px 0px 1px;
-}
-
-.nyt-img img{
-    width: 100%;
-    border: 1px solid #114533;
-}
-.btn-nyt{
-    background-color: transparent !important;
-    padding: 0 !important;
-    margin: 0 !important;
+h4 {
+    font-weight: bold;
 }
 .loadingBar{
     text-align: center;
@@ -54,23 +33,6 @@ h2 {
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 5px;
-}
-.odd{
-    background-color: #ddd;
-}
-.bookResult{
-    padding: 10px;
-    border-radius: 20px;
-    margin: 0 2px 0 2px;
-}
-.bookResult .actions{    
-    text-align: center;
-}
-.details span{
-    font-weight: bold;
-}
-.bookResult .actions .findPrices{
-    
 }
 
 btn:hover{
@@ -89,65 +51,3 @@ btn:hover{
 }
 
 
-.search-form{
-    text-align: center;
-}
-.search-form input{
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    padding: 5px;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-.search-form .button{    
-    background-color: #114533;
-    font-weight: bold;
-    color: #fff;
-}
-div.prices{
-    margin-top: 3px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    display: none;
-}
-div.priceRow{
-    padding: 10px;
-    margin: 3px;
-    font-size: 1em;
-    cursor: pointer;
-    border-bottom: 1px dotted #ccc;
-    color: #114533;
-}
-div.priceRow span{
-    font-weight: bold;
-}
-.last{
-    border-bottom: 0px !important; 
-}
-div.fullDetails span{
-    font-weight: bold;
-}
-/*
-div.fullDetails .image{
-    float: left;
-    width: 125px;
-    display: inline;
-}
-div.fullDetails .details{
-    float: left;
-    width: 475px;
-    margin-left: 20px;
-}
-*/
-div.fullDetails .links{
-    text-align: center;
-}
-
-#nextButtons button{
-    background-color: #fff;
-    border: 2px solid #ccc;
-}
-#nextButtons button.on{
-    border: 2px solid #114533;
-}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-14 18:09:51
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-16 00:21:41
          compiled from "/www/cheapbooksearch/protected/templates/scripts.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:83306376654ea713626ce75-10279990%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '995522618496fa4f33e04c226162fa6027e834b8' => 
     array (
       0 => '/www/cheapbooksearch/protected/templates/scripts.tpl',
-      1 => 1426356521,
+      1 => 1426465297,
       2 => 'file',
     ),
   ),
@@ -73,7 +73,7 @@ $_smarty_tpl->tpl_vars['vendor']->_loop = true;
             
             function scrollToID(id, speed){
                 if($("#searchTop").length){
-                    var offSet = 50;
+                    var offSet = 60;
                     var targetOffset = $(id).offset().top - offSet;
                     $('html,body').animate({scrollTop:targetOffset}, speed);
                 }

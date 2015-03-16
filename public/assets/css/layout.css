@@ -1,6 +1,8 @@
 body{
    /* background: #ebe8de; */
     font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 18px;
     color: #333333;
     padding-top: 60px;
     -webkit-font-smoothing: antialiased;
@@ -9,6 +11,7 @@ body{
     width: auto;
     max-width: 900px;    
     margin:0 auto;
+    padding: 0px 10px 0px 10px;
 }
 .left{
     float: left;
@@ -36,4 +39,10 @@ section.body{
 }
 #headerLoader{
     margin-top: 10px;
+}
+.book-img-small{
+    width: 100px;
+}
+#searchTop{
+    margin-bottom: 10px;
 }

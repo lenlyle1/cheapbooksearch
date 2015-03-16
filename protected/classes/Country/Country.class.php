@@ -9,8 +9,8 @@ Class Country{
         global $db;
 
         $sql = "SELECT name, code_2, code_3, locale, currency, amazon_country, language FROM countries WHERE active = 1";
-        $stmt = $db->query($sql);
-
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_CLASS);
     }
 
@@ -19,17 +19,13 @@ Class Country{
     {
         Debugger::debug('setCountry');
         if(!Session::get('countries')){
-            Debugger::debug('no countries in session');
             Session::set('countries', self::loadCountries());
         }
         if(empty($_GET['country'])){
-            Debugger::debug('no country in get');
             self::setDefault();
         } else if(!Session::get('country')){
-            Debugger::debug('setting country');
             self::get($_GET['country']);
         } else if(Session::get('country')->code_3 != $_GET['country']){
-            Debugger::debug('country changed');
             self::get($_GET['country']);
         }
     }
@@ -39,11 +35,9 @@ Class Country{
         $country = null;
 
         if(!$siteCountry){
-            Debugger::debug('no country in url, default to usa');
             $siteCountry = self::$default;
         }
         if(!Session::get('country') || Session::get('country')->code_3 != $siteCountry){
-            Debugger::debug('session does not match, change');
             foreach(Session::get('countries') as $country){
                 if($siteCountry == $country->code_3){
                     Session::set('country', $country);
