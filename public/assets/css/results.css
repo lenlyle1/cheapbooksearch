@@ -1,0 +1,77 @@
+
+.headerBar{
+    color: #114533;
+    background-color: #ffa;
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid #114533;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.odd{
+    background-color: #ddd;
+}
+
+.bookResult{
+    padding: 10px;
+    border-radius: 20px;
+    margin: 0 2px 0 2px;
+}
+.bookResult .actions{    
+    text-align: center;
+}
+.bookResult .actions .findPrices{
+    
+}
+.details {
+	width: 60%;
+	float: left;
+}
+.details span{
+    font-weight: bold;
+}
+.actions {
+	margin-left: 10px;
+	width: 15%;
+	margin-right: 14px;
+	float: right;
+	top: 0;
+}
+
+div.prices{
+    margin-top: 3px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    display: none;
+}
+div.priceRow{
+    padding: 10px;
+    margin: 3px;
+    font-size: 1em;
+    cursor: pointer;
+    border-bottom: 1px dotted #ccc;
+    color: #114533;
+}
+div.priceRow span{
+    font-weight: bold;
+}
+.last{
+    border-bottom: 0px !important; 
+}
+div.fullDetails span{
+    font-weight: bold;
+}
+div.fullDetails .links{
+    text-align: center;
+}
+
+#nextButtons button{
+    background-color: #fff;
+    border: 2px solid #ccc;
+}
+#nextButtons button.on{
+    border: 2px solid #114533;
+}

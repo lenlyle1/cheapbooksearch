@@ -1,0 +1,30 @@
+
+.search-form{
+    text-align: center;
+    width: 300px;  
+    margin:0 auto;
+}
+.search-form input{
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding: 5px;
+    margin: 5px;
+    width:100%;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.search-form .button{    
+    background-color: #114533;
+    font-weight: bold;
+    color: #fff;
+}
+
+.loadingBar{
+    text-align: center;
+    font-size: 2em;
+    color: #114533;
+    border: 1px solid #114533;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}

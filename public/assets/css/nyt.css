@@ -1,0 +1,28 @@
+
+.nyt-holder{
+
+}
+.nyt-item{
+    width: 16.66%;
+    float: left;
+}
+.nyt-wrapper{
+    overflow: hidden;
+    height: 200px;
+    border: 1px solid #114533;
+}
+.nyt-img{
+    width: 100%;
+    float: left;
+    margin: 0px 1px 0px 1px;
+}
+
+.nyt-img img{
+    width: 100%;
+    border: 1px solid #114533;
+}
+.btn-nyt{
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}

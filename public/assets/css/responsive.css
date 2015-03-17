@@ -1,0 +1,13 @@
+
+@media (max-width: 640px){
+/* Styles */
+	.nyt-wrapper{
+	    overflow: hidden;
+	    height: 70px;
+	    border: 1px solid #114533;
+	}
+
+	.actions {
+		width: 100%;
+	}
+}
