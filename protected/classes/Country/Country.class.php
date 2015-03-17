@@ -8,10 +8,14 @@ Class Country{
     {
         global $db;
 
-        $sql = "SELECT name, code_2, code_3, locale, currency, amazon_country, language FROM countries WHERE active = 1";
-        $stmt = $db->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_CLASS);
+        $sql = "SELECT name, code_2, code_3, locale, currency, amazon_country FROM countries WHERE active = 1";
+        try{
+            $stmt = $db->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        } catch (PDOException $e){
+            echo $e->getMessage();
+        }
     }
 
 
@@ -51,6 +55,7 @@ Class Country{
     private static function setDefault()
     {
         self::get();
+
         Redirect::handle('/' . self::$default . '/');
     }
 

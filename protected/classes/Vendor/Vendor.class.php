@@ -11,11 +11,12 @@ Class Vendor{
                     ON vc.country_id = c.id
                WHERE c.code_3 = ?
                AND v.active = 1";
-
-        $stmt = $db->prepare($sql);
-
-        $stmt->execute(array(Session::get('country')->code_3));
-
-        return $stmt->fetchAll(PDO::FETCH_CLASS);
+        try {
+            $stmt = $db->prepare($sql);
+            $stmt->execute(array(Session::get('country')->code_3));
+            return $stmt->fetchAll(PDO::FETCH_CLASS);
+        } catch (PDOException $e){
+            die($e->getMessage());
+        }
     }
 }

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-16 01:51:18
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-03-16 04:17:12
          compiled from "/www/cheapbooksearch/protected/templates/main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:73694573654ced0d6223a80-33011413%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c968c415d0028c45b8fa2011fadc7ab772bea577' => 
     array (
       0 => '/www/cheapbooksearch/protected/templates/main.tpl',
-      1 => 1426470673,
+      1 => 1426479427,
       2 => 'file',
     ),
   ),
@@ -110,8 +110,7 @@ $_smarty_tpl->tpl_vars['ctry']->_loop = true;
                     </ul>
                 </nav>
             </div>
-        </header>
-                
+        </header> 
         <section class="body">
            
             <div class="container" role="main">

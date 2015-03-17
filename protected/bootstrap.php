@@ -31,10 +31,10 @@ if($_SERVER['SERVER_NAME'] == "cheapbooksearch"){
 try{
     $db = new PDO('mysql:host=' . $dbHost . ';dbname=cheapbooksearch;charset=utf8', 'lenlyle', 'Scr0tums');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
-} catch(Exception $e){
+} catch(PDOException $e){
     die('There has been a serious error');
 }
-
+Debugger::debug($db, 'DB');
 $allowedModules = array(
     "index",
     "search",
@@ -44,6 +44,6 @@ $allowedModules = array(
     "about"
 );
 
-$countries = Country::loadCountries();
+//$countries = Country::loadCountries();
 
-Debugger::debug($countries);
+//Debugger::debug($countries);

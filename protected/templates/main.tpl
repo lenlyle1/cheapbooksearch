@@ -64,8 +64,7 @@
                     </ul>
                 </nav>
             </div>
-        </header>
-                
+        </header> 
         <section class="body">
            
             <div class="container" role="main">

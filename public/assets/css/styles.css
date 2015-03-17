@@ -41,7 +41,7 @@ btn:hover{
 .btn{
     color: #fff;   
     background-color: #114533;
-    width: 100%;
+    width: auto;
     padding: 7px;
     text-align: center;
     color: white;

@@ -3,7 +3,7 @@
 include_once '../protected/bootstrap.php';
 // start page load timer
 Timer::start();
-//session_destroy();
+//ssion_destroy();
 try{
     Debugger::debug($_GET);
 
@@ -14,7 +14,6 @@ try{
     //Country_Importer::run();
     $smarty->assign('country', Session::get('country'));
     $smarty->assign('countries', Session::get('countries'));
-
     if(!empty($_GET['module'])){
         $module = $_GET['module'];
         Debugger::debug('modules/' . $module . '.php');
@@ -25,7 +24,7 @@ try{
     } else {
         try {
             $vendors = Vendor::loadVendors(Session::get('country')->code_3);
-         } catch(PDOException $ex) {
+         } catch(Exception $ex) {
             Debugger::debug('PDO error: ' . $ex->getMessage());
          }
         //load vendors
